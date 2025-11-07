@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Central de Links Úteis</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Roboto, sans-serif;
+      background-color: #f8fafc;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #2563eb;
+      color: white;
+      text-align: center;
+      padding: 1.5rem 0;
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    main {
+      max-width: 700px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .link-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      padding: 1.2rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.2s ease;
+    }
+
+    .link-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .link-card h3 {
+      margin: 0;
+      font-size: 1.1rem;
+      color: #1e3a8a;
+    }
+
+    .link-card a {
+      text-decoration: none;
+      background-color: #2563eb;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      transition: background-color 0.2s ease;
+    }
+
+    .link-card a:hover {
+      background-color: #1e40af;
+    }
+
+    footer {
+      text-align: center;
+      color: #555;
+      padding: 1rem 0;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>📎 Central de Links Úteis</header>
+
+  <main>
+    <div class="link-card">
+      <h3>ADD</h3>
+      <a href="https://shorturl.at/IdsUA" target="_blank">Acessar</a>
+    </div>
+
+    <div class="link-card">
+      <h3>IPEO - Palma da Mão</h3>
+      <a href="https://shre.ink/ipeopalmadamao" target="_blank">Acessar</a>
+    </div>
+
+    <div class="link-card">
+      <h3>Serviços Linha Viva Leve</h3>
+      <a href="https://forms.office.com/r/QDVxkcwPmv" target="_blank">Acessar</a>
+    </div>
+
+    <!-- 🔗 Adicione novos links abaixo copiando o modelo -->
+    <!--
+    <div class="link-card">
+      <h3>NOME DO LINK</h3>
+      <a href="URL_AQUI" target="_blank">Acessar</a>
+    </div>
+    -->
+  </main>
+
+  <footer>© 2025 | Central de Links • Desenvolvido por Pedro Fillype</footer>
+</body>
+</html>
