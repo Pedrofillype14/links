@@ -49,6 +49,7 @@
       justify-content: space-between;
       align-items: center;
       transition: all 0.2s ease;
+      cursor: pointer;
     }
 
     .link-card:hover {
@@ -74,6 +75,27 @@
 
     .link-card a:hover {
       background-color: #1e40af;
+    }
+
+    /* Estilo para sublinks (menu oculto) */
+    .submenu {
+      display: none;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-top: 0.8rem;
+      padding-left: 1.5rem;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .submenu a {
+      background-color: #60a5fa;
+      font-size: 0.85rem;
+      padding: 0.4rem 0.8rem;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-5px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     footer {
@@ -113,9 +135,15 @@
     <!-- ====================== -->
     <h2>🔗 Links</h2>
 
-    <div class="link-card">
-      <h3>Serviços Linha Viva Leve</h3>
-      <a href="https://forms.office.com/r/QDVxkcwPmv" target="_blank">Acessar</a>
+    <!-- Card com submenu -->
+    <div class="link-card" onclick="toggleSubmenu('submenu-ll')">
+      <h3>Serviços Linha Viva Leve ▾</h3>
+    </div>
+
+    <div id="submenu-ll" class="submenu">
+      <a href="https://forms.office.com/r/91h3n1qEv1" target="_blank">Oeste</a>
+      <a href="https://forms.office.com/r/P0mgbUDB40" target="_blank">Centro</a>
+      <a href="https://forms.office.com/r/QDVxkcwPmv" target="_blank">Leste</a>
     </div>
 
     <div class="link-card">
@@ -140,11 +168,17 @@
 
     <div class="link-card">
       <h3>Prestação de Contas ADD</h3>
-      <a href="https://forms.office.com/r/E0VNk3fVGk">Acessar</a>
+      <a href="https://forms.office.com/r/E0VNk3fVGk" target="_blank">Acessar</a>
     </div>
   </main>
 
   <footer>© 2025 | Central de Links • Desenvolvido por Pedro Fillype</footer>
+
+  <script>
+    function toggleSubmenu(id) {
+      const submenu = document.getElementById(id);
+      submenu.style.display = submenu.style.display === "flex" ? "none" : "flex";
+    }
+  </script>
 </body>
 </html>
-
