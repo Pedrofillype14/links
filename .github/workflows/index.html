@@ -77,20 +77,49 @@
       background-color: #1e40af;
     }
 
-    /* Estilo para sublinks (menu oculto) */
+    /* Submenu bonito e padronizado */
     .submenu {
       display: none;
       flex-direction: column;
-      gap: 0.5rem;
-      margin-top: 0.8rem;
-      padding-left: 1.5rem;
+      gap: 0.6rem;
+      margin-top: 0.6rem;
+      padding-left: 1rem;
       animation: fadeIn 0.3s ease-in-out;
     }
 
-    .submenu a {
-      background-color: #60a5fa;
+    .submenu-item {
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+      padding: 0.8rem 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.2s ease;
+    }
+
+    .submenu-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+    }
+
+    .submenu-item span {
+      color: #1e3a8a;
+      font-weight: 500;
+    }
+
+    .submenu-item a {
+      background-color: #2563eb;
+      color: white;
+      text-decoration: none;
+      padding: 0.4rem 0.9rem;
+      border-radius: 6px;
       font-size: 0.85rem;
-      padding: 0.4rem 0.8rem;
+      transition: background-color 0.2s ease;
+    }
+
+    .submenu-item a:hover {
+      background-color: #1e40af;
     }
 
     @keyframes fadeIn {
@@ -136,14 +165,23 @@
     <h2>🔗 Links</h2>
 
     <!-- Card com submenu -->
-    <div class="link-card" onclick="toggleSubmenu('submenu-ll')">
-      <h3>Serviços Linha Viva Leve ▾</h3>
+    <div class="link-card" onclick="toggleSubmenu('submenu-ll', this)">
+      <h3>Serviços Linha Viva Leve <span id="arrow">▾</span></h3>
     </div>
 
     <div id="submenu-ll" class="submenu">
-      <a href="https://forms.office.com/r/91h3n1qEv1" target="_blank">Oeste</a>
-      <a href="https://forms.office.com/r/P0mgbUDB40" target="_blank">Centro</a>
-      <a href="https://forms.office.com/r/QDVxkcwPmv" target="_blank">Leste</a>
+      <div class="submenu-item">
+        <span>Oeste</span>
+        <a href="https://forms.office.com/r/91h3n1qEv1" target="_blank">Acessar</a>
+      </div>
+      <div class="submenu-item">
+        <span>Centro</span>
+        <a href="https://forms.office.com/r/P0mgbUDB40" target="_blank">Acessar</a>
+      </div>
+      <div class="submenu-item">
+        <span>Leste</span>
+        <a href="https://forms.office.com/r/QDVxkcwPmv" target="_blank">Acessar</a>
+      </div>
     </div>
 
     <div class="link-card">
@@ -175,9 +213,12 @@
   <footer>© 2025 | Central de Links • Desenvolvido por Pedro Fillype</footer>
 
   <script>
-    function toggleSubmenu(id) {
+    function toggleSubmenu(id, element) {
       const submenu = document.getElementById(id);
-      submenu.style.display = submenu.style.display === "flex" ? "none" : "flex";
+      const arrow = element.querySelector("#arrow");
+      const isOpen = submenu.style.display === "flex";
+      submenu.style.display = isOpen ? "none" : "flex";
+      arrow.textContent = isOpen ? "▾" : "▴";
     }
   </script>
 </body>
